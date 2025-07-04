@@ -1,0 +1,348 @@
+/**=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/**=============== BASE ===============*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-body-background);
+  font-family: var(--font-family-normal);
+  font-size: var(--font-size-text);
+  color: var(--color-text);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+button {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+/* ---------- 1. БАЗА И ПЕРЕМЕННЫЕ ---------- */
+:root {
+  --clr-primary: #f38e82;
+  --clr-primary-dark: #e67e6f;
+  --clr-accent: #51cf66;
+  --clr-gray-100: #f9f9f9;
+  --clr-gray-300: #cfcfcf;
+  --clr-gray-600: #6c757d;
+  --clr-text: #333;
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --shadow-s: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-m: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --font-main: "Inter", "Segoe UI", sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font-main);
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ---------- 2. КАРТОЧКА РЕЦЕПТА ---------- */
+
+.recipe {
+  max-width: 46rem;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-m);
+  color: var(--clr-text);
+}
+
+/* ---------- 2.1 Верхняя часть ---------- */
+
+.recipe__fig {
+  position: relative;
+  margin: 0;
+}
+
+.recipe__img {
+  display: block;
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+}
+
+.recipe__title {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.55);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-s);
+  color: #fff;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.recipe__title span {
+  display: block;
+}
+
+/* ---------- 2.2 Детали рецепта ---------- */
+
+.recipe__details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.6rem 2.4rem;
+  padding: 1.8rem 2.4rem;
+  background: var(--clr-gray-100);
+  border-bottom: 1px solid var(--clr-gray-300);
+}
+
+.recipe__info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--clr-gray-600);
+}
+
+.recipe__info-icon,
+.recipe__icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  fill: var(--clr-primary);
+  flex-shrink: 0;
+}
+
+.recipe__info-data {
+  font-weight: 600;
+  color: var(--clr-text);
+}
+
+.recipe__info-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.4px;
+}
+
+/* ---------- 2.3 Кнопки изменения порций и закладка ---------- */
+
+.recipe__info-buttons {
+  display: inline-flex;
+  gap: 0.4rem;
+  margin-left: 0.4rem;
+}
+
+.btn--tiny,
+.btn--round {
+  border: none;
+  background: var(--clr-primary);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease;
+}
+
+.btn--tiny {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+}
+
+.btn--round {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+.btn--tiny:hover,
+.btn--round:hover {
+  background: var(--clr-primary-dark);
+}
+
+.btn--tiny svg,
+.btn--round svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+/* ---------- 2.4 Секция ингредиентов ---------- */
+
+.recipe__ingredients {
+  padding: 2.4rem 2.4rem 1.2rem;
+}
+
+.heading--2 {
+  font-size: 1.6rem;
+  margin: 0 0 1.2rem;
+}
+
+.recipe__ingredient-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.recipe__ingredient {
+  display: grid;
+  grid-template-columns: 1.6rem 4rem 1fr;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+}
+
+.recipe__quantity {
+  text-align: right;
+  font-weight: 600;
+}
+
+.recipe__unit {
+  margin-right: 0.2rem;
+  font-weight: 500;
+}
+
+.recipe__icon {
+  fill: var(--clr-accent);
+}
+
+/* ---------- 2.5 Секция Directions ---------- */
+
+.recipe__directions {
+  padding: 2.4rem;
+  border-top: 1px solid var(--clr-gray-300);
+}
+
+.recipe__directions-text {
+  margin: 0 0 1.6rem;
+  font-size: 1rem;
+  color: var(--clr-text);
+  line-height: 1.5;
+}
+
+.recipe__publisher {
+  font-weight: 600;
+}
+
+.btn--small {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  background: var(--clr-primary);
+  color: #fff;
+  border-radius: var(--radius-s);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn--small:hover {
+  background: var(--clr-primary-dark);
+}
+
+.search__icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+/* ---------- 3. АДАПТАЦИЯ ---------- */
+
+@media (min-width: 600px) {
+  .recipe__img {
+    height: 22rem;
+  }
+  .recipe__title {
+    font-size: 1.8rem;
+  }
+  .recipe__ingredient {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .recipe {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .recipe__fig,
+  .recipe__img {
+    height: 100%;
+  }
+  .recipe__details,
+  .recipe__ingredients,
+  .recipe__directions {
+    grid-column: span 2;
+  }
+}
+
+/* ---- spinner ----- */
+
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+}
+.spinner > svg {
+  height: 6rem;
+  width: 6rem;
+  fill: var(--clr-primary);
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
