@@ -268,11 +268,13 @@ article {
   align-items: center;
   gap: 24px;
   border-radius: 8px;
+  margin: 18px;
 }
 .example__number {
   font-size: 44px;
   border-radius: 8px;
-  width: 200px;
+  /* width: 200px; */
+  padding: 0 18px;
   color: #fff;
   align-self: stretch;
   text-align: center;

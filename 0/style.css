@@ -1,0 +1,79 @@
+/**=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/**=============== BASE ===============*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-gray-100);
+  font-family: var(--font-main);
+  font-size: 14px;
+  color: var(--clr-text);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+button {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+  border: none;
+}
+
+/* ---------- 1. БАЗА И ПЕРЕМЕННЫЕ ---------- */
+:root {
+  --clr-primary: #f38e82;
+  --clr-primary-dark: #e67e6f;
+  --clr-accent: #51cf66;
+  --clr-gray-100: #f9f9f9;
+  --clr-gray-300: #cfcfcf;
+  --clr-gray-600: #6c757d;
+  --clr-text: #333;
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --shadow-s: 0 2px 6px rgba(0, 0, 0, 0.06);
+  --shadow-m: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --font-main: "Nunito", sans-serif;
+}
+/* 
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
